@@ -209,6 +209,7 @@ Faq
 ### What is the spec (battery type) for the button-cell for the RTC?
 ### Why is 50dB the microphone lowest value?
 ### How do I calibrate the sensors?
+### Browsers compatibility
 
 
 Troubleshooting
