@@ -188,6 +188,136 @@ The Sck Command Line
 Hardware
 =====
 ### Inside the SCK
+
+![Main Board](img/main_board.jpg)
+
+###### Main Board
+
+![Main Board CPU](img/main_board_cpu.jpg)
+
+**CPU** 
+
+Both versions of the SCK (1.0 and 1.1) are using the same CPU, ATMEGA32U4(Arduino Leonardo). With the difference that the 1.0 works at 5V and 16MHZ and the 1.1 works at 3.3V and 8MHZ. In the 1.1 version we’ve improved the power consumption. 
+
+This CPU has native USB and an UART TTL port allowing us to connect directly with the WIFI module.
+
+<a href="http://www.atmel.com/images/doc7766.pdf" target="_blank">ATMEGA32U4 datasheet</a>
+
+![usb connectors](img/usb_connectors.png)
+
+**USB CONNECTOR**
+
+The 1.0 version uses a Mini USB connector and 1.1 version uses a Micro USB.
+
+![wifly module](img/main_board_wifly.jpg)
+
+**WIFI MODULE**
+
+The RN-131 module is a standalone, embedded wireless 802.11 b/g networking module. With its small form factor and extremely low power consumption, the RN-131 fits perfectly for the SCK wireless communication requirements.
+
+Main features:
+
+- Qualified 2.4-GHz IEEE 802.11b/g transceiver
+- Ultra-low power: 4 uA sleep, 40 mA Rx, 210 mA Tx
+- High throughput, 1 Mbps sustained data rate with TCP/IP and WPA2
+- Small, compact surface-mount module
+- On-board ceramic chip antenna and U.FL connector for external antenna
+- 8-Mbit flash memory and 128-KB RAM
+- UART hardware interface
+- 10 general-purpose digital I/O pins
+- 8 analog sensor interfaces
+- Real-time clock for wakeup and time stamping
+- Accepts 3.3-V regulated or 2 to 3 V battery
+- Supports ad hoc and infrastructure networking modes
+- On board ECOS -OS, TCP/IP stacks
+- Wi-Fi Alliance certified for WPA2-PSK
+- FCC/CE/ICS certified and RoHS compliant.
+- Industrial (RN-131G) and commercial (RN-131C) grade temperature options
+
+<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/rn-131-ds-v3.2r.pdf" target="_blank">WIFLY module - RN-131 datasheet</a>
+
+
+![MCP1725](img/main_board_MCP1725.jpg)
+
+**BATTERY POWERING**
+
+For powering the SCK, in both versions, we are using a 3.7v 2000 mAh li-on battery. 
+
+In 1.0 version, SCK uses two different voltages, 3.3V and 5V to power the IC’s. 
+
+To elevate to 5V we are using a step-up based on NCP1400, thus having a stable voltage at 5v and 100mA.
+
+On the other hand, to regulate the voltage and to obtain 3.3v, the SCK uses the IC MAX604.
+
+In 1.1 version, to simplify, the voltage of entire SCK was unified to 3.3V. The responsible to regulate the voltage from 3.7v to 3.3v is the MCP1725 IC.
+
+<a href="http://www.onsemi.com/pub_link/Collateral/NCP1400A-D.PDF" target="_blank">NCP1400 datasheet</a><br>
+<a href="http://www.solarbotics.net/library/datasheets/MAX604.pdf" target="_blank">MAX604 datasheet</a><br>
+<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22026b.pdf" target="_blank">MCP1725 datasheet</a>
+
+
+![MCP73831](img/main_board_MCP73831.jpg)
+
+**BATTERY CHARGING**
+
+For charging the battery there are two ways, USB or solar panel. To carry out the charging we are using MCP73831 IC. 
+
+For the solar panel way, in 1.0 version the solar panel have to be 12v and 500mA. In 1.1 version, the solar panel can be more versatile in terms of amperage. 
+
+<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf" target="_blank">MCP73831 datasheet</a>
+
+![LM2674](img/main_board_LM2674.jpg)
+
+**SOLAR PANEL CHARGING**
+
+As the solar panel produces 12v, depending on the sunlight conditions, we have to reduce the voltage to 5v to feed up the Vin of the MCP73831 charger IC. 
+
+To carry out this task we are using the LM2674 IC, a very efficient IC, with a rate of 91% of performance.
+
+<a href="http://www.ti.com/lit/ds/symlink/lm2674.pdf" target="_blank">LM2674 datasheet</a>
+
+![DS1339Y-3+](img/main_board_DS1339Y-3+.jpg)
+
+**RTC (REAL TIME CLOCK)**
+
+The SCK has a real time clock for when the kit is offline. For this task we chose the DS1307 IC for the 1.0 version and the DS1339Y-3+ IC for the 1.1 version. Different IC due to the different voltages, 5V for the 1.0 version and 3.3V for the 1.1 version.
+
+<a href="http://datasheets.maximintegrated.com/en/ds/DS1307.pdf" target="_blank">DS1307 datasheet</a><br>
+<a href="http://datasheets.maximintegrated.com/en/ds/DS1339-DS1339U.pdf" target="_blank">DS1339Y-3+ datasheet</a>
+
+![DM3CS](img/main_board_DM3CS.jpg)
+
+**SD CARD READER**
+
+The SD card is used to store the data captured by the sensors when the kit is offline. Then, when the kit is online, the data will be uploaded to the platform. 
+
+To hold the SD card we are using the DM3CS holder. The SD card is powered at 3.3V and communicates with the CPU through SPI protocol.
+
+<a href="http://www.mouser.com/ds/2/185/e60900232-38395.pdf" target="_blank">DM3CS datasheet</a>
+
+
+![24LC256](img/main_board_24LC256.jpg)
+
+**EEPROM MEMORY**
+
+For the users that don’t have a SD card we’ve added an EEPROM memory to store the data when the SCK is offline.
+
+We chose the 24LC256 IC that can store 32kBytes, it communicates with the CPU through I2C protocol.
+
+<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/20001203U.pdf" target="_blank">24LC256 datasheet</a>
+
+
+**MAIN BOARD BASIC SENSORS**
+
+The main board has some basic sensors:
+
+- Measurement of the battery level
+- Measurement of the solar panel level
+- Measurement of the wireless networks detected
+
+
+###### Sensor Board
+
 ### Enclosures
 ### Acrylic cases 
 
