@@ -7,6 +7,26 @@ Getting Started
 
 Thanks! The Smart Citizen Team wants to thank you for being here, for purchasing a kit, joining the platform taking part on this adventure.
 
+To join the Smart Citizen community we are going to show you how to add your SCK kit to the platform.
+
+For this, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> through your web browser(choose Firefox or CHROME). Click Register in the upper menu. Fill the form fields and click register.
+
+Once you’ve completed the registration you’ll be in your dashboard. To add your SCK kit, click on ADD SMART CITIZEN KIT.
+
+Fill all the fields, under the labels SET A NEW KIT, SET UP KIT GEOLOCATION, DESCRIBE YOUR KIT, then click on SAVE SENSOR button.
+
+Now, your SCK kit has been registered. Switch on your SCK kit and click on CONFIGURE button to continue the process. 
+
+If is the first time you register a kit you should install the extension of Codebender for your browser in order to configure the  SCK kit. 
+
+Once you’ve installed the extension, return to smart citizen site. You’ll notice that the content has changed. Click on START PROCESS button. Wait some seconds while Codebender plugin does its tasks. 
+
+When it has finished you’ll see a form to setup your wifi connection and data update interval parameters. Fill the fields with your ssid, encryption mode and password phrase. Then, click on SYNC button. Wait some seconds while your kit it’s been configured.
+
+When the sync has finished, don’t forget to click on the REGISTER KIT button on the bottom to add de MAC ADDRESS. Now reset your kit in order the changes take effect. 
+
+Back to your dashboard. Wait two minutes and reload the page, pressing ctrl+R or cmd+R depending on your operating system, to see if some data has been uploaded to the platform. To check this take a look at the value in Last Update: field.
+
 ### Manual set up: The Serial Way 
 
 In this tutorial you will configure your Smart Citizen Kit (hereafter SCK) using serial communication. By using serial communication, you will register your Wi-Fi settings into the SCK and save the SCK’s MAC address in our server.
@@ -191,7 +211,9 @@ Hardware
 
 ![Main Board](img/main_board.jpg)
 
-###### Main Board
+#### Main Board
+
+The main board contains the basic functionality like sensor I/O to read de sensor values, communicate with the platform through the wifi module, manage the power and battery charging.
 
 ![Main Board CPU](img/main_board_cpu.jpg)
 
@@ -315,8 +337,73 @@ The main board has some basic sensors:
 - Measurement of the solar panel level
 - Measurement of the wireless networks detected
 
+![Sensor Board](img/sensor_board.jpg)
 
-###### Sensor Board
+#### SENSOR BOARD
+
+The sensor board contains the necessary sensors for measuring the pollution parameters. This means NO2 and CO gases, sunlight, noise pollution, temperature, humidity. Also, the sensor board has an I2C bus, this allows to expand the SCK to other kind of sensors.
+
+![MICS4514](img/sensor_board_MICS4514.jpg)
+
+**NO2 AND CO2 SENSORS**
+
+To measure these two gases we chose <a href="http://www.e2v.com/" target="_blank">e2v</a> sensors. In particular, metal oxide sensors MICS5525 and MICS2710, for version 1.0. And MICS4514, for version 1.1, that contains both sensors in one.
+
+Metal oxide sensors are based on oxide semiconductors. Their electrical conductivity is modulated due to the reaction between the semiconductor and the gases in the atmosphere.
+
+<a href="http://www.e2v.com/shared/content/resources/File/sensors_datasheets/Metal_Oxide/mics-5525.pdf" target="_blank">MICS5525 datasheet</a><br>
+<a href="http://www.cdiweb.com/datasheets/e2v/mics-2710.pdf" target="_blank">MICS2710 datasheet</a><br>
+<a href="http://files.manylabs.org/datasheets/MICS-4514.pdf" target="_blank">MICS4514 datasheet</a>
+
+![H1730FVC](img/sensor_board_BH1730FVC.jpg)
+
+**LIGHT SENSOR**
+
+The light sensor is a basic element to know the light pollution. In version 1.0, was used a LDR(light-dependent resistor) whose voltage varies depending on the light conditions.
+
+For version 1.1, was used a photodiode BH1730FVC. This sensor contains an I2C bus that gives us directly the amount of lux of ambient and infrared light.
+
+<a href="http://www.farnell.com/datasheets/1813319.pdf" target="_blank">BH1730FVC datasheet</a>
+
+![Noise Sensor](img/sensor_board_noise_sensor.jpg)
+
+**NOISE SENSOR**
+
+The noise sensor is based on an electret microphone. For the version 1.0, the audio signal is passed through an operational amplifier configured as band pass filter.
+
+For the version 1.1, the amplification step was modified adding a variable gain, allowing us to measure very low and very high signals.
+
+![SHT21 Sensor](img/sensor_board_SHT21.jpg)
+
+**TEMPERATURE AND HUMIDITY SENSOR**
+
+To measure temperature and humidity was used a module that integrates both sensors. 
+
+For version 1.0 was used the RHT22, it has one wire digital interface.
+
+For version 1.1 was used the SHT21, it has I2C protocol and a more fast response between measures than the RHT22.
+
+<a href="https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf" target="_blank">RHT22 datasheet</a><br>
+<a href="http://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/Humidity/Sensirion_Humidity_SHT21_Datasheet_V4.pdf" target="_blank">SHT21 datasheet</a>
+
+![ADXL345](img/sensor_board_ADXL345.jpg)
+
+**3 AXIS ACCELEROMETEER**
+
+In version 1.0 was detected that some measures vary depending on the orientation the SCK. 
+
+For this, in version 1.1, was added an accelerometer(ADXL345) to detect the position and to compensate the measures depending on the orientation of the SCK.
+
+The ADXL345 has I2C protocol to interface with.
+
+<a href="http://www.analog.com/static/imported-files/data_sheets/ADXL345.pdf" target="_blank">ADXL345 datasheet</a>
+
+![I2C Bus](img/sensor_board_i2c_bus.jpg)
+
+**I2C EXPANSION BUS**
+
+Due to the ease of the I2C protocol. We’ve included and I2C bus to provide to the community the opportunity of expanding the SCK.
+
 
 ### Enclosures
 ### Acrylic cases 
