@@ -7,7 +7,7 @@ Getting Started
 
 Thanks! The Smart Citizen Team wants to thank you for being here, for purchasing a kit, joining the platform taking part on this adventure.
 
-To join the Smart Citizen community we are going to show you how to add your SCK kit to the platform.
+To join the Smart Citizen community we are going to show you how to add your Smart Citizen Kit(hereafter SCK) to the platform.
 
 For this, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> through your web browser(choose Firefox or CHROME). Click Register in the upper menu. Fill the form fields and click register.
 
@@ -29,7 +29,7 @@ Back to your dashboard. Wait two minutes and reload the page, pressing ctrl+R or
 
 ### Manual set up: The Serial Way 
 
-In this tutorial you will configure your Smart Citizen Kit (hereafter SCK) using serial communication. By using serial communication, you will register your Wi-Fi settings into the SCK and save the SCK’s MAC address in our server.
+In this tutorial you will configure your SCK using serial communication. By using serial communication, you will register your Wi-Fi settings into the SCK and save the SCK’s MAC address in our server.
  
 The SCK, like most Arduino chips, has the ability to communicate through serial protocol (when plugged with a proper USB cable). The SCK uses the WiFly module to communicate with your Wi-Fi router. Anyway, through serial communication you will be able to send the commands directly with this module to set your Wi-Fi settings and extract the MAC address used by our server to verify your identity.
  
@@ -42,23 +42,28 @@ STEP 1: Configuring the Wi-Fi settings
 - Open Arduino IDE.
 - Connect your SCK via USB.
 - From the Tools > Board menu, choose the right USB port (generally the last one).
-- From the Tools > Serial port menu, select the right board. This is Leonardo for SCK v1.0 (Goteo) or LilyPad for SCK v1.1 (Kickstarter).
+- From the Tools > Serial port menu, select the right board. This is Leonardo for SCK v1.0 (Goteo) or LilyPad Arduino USB for SCK v1.1 (Kickstarter).
 - Open the serial monitor window in the Arduino IDE (button at the top-right of the main window).
 - Set the options to "115200 baud" and “No line return” (drop-down menu at the bottom-right of the monitor window).
-- Wake up the module and activate the Wi-Fi command mode:
+- Wake up the module and activate the Wi-Fi command mode by typing in the serial monitor:
+
 *$$$*
 
 - Change to “Carriage return” option (drop-down menu at the bottom-right of the monitor window)
 
 - Add a new SSID to memory by typing:
 
-*set wlan ssid XXX**
+*set wlan ssid XXX*
 
-- Add a new phrase to memory (optional, password for WPA1 & WPA2):*
+Note: You have to replace XXX with your ssid name, filling any space with the dollar ($) character.
 
-*set wlan phrase XXX**
+- Add a new phrase to memory (optional, password for WPA1 & WPA2):
 
-- Add a new key to memory  (optional, password for WEP & WEP64):*
+*set wlan phrase XXX*
+
+Note: You have to replace XXX with your phrase, filling any space with the dollar ($) character.
+
+- Add a new key to memory  (optional, password for WEP & WEP64):
 
 *set wlan key XXX*
 
@@ -70,18 +75,16 @@ STEP 1: Configuring the Wi-Fi settings
 
 *set wlan ext_antenna XXX*
 
-- Get the MAC address of the kit
+- Get the MAC address of the kit by typing:
 
 *get mac*
 
 - Copy/Save the answer for further use.
 
-- Exit and go back to the normal operational mode
+- Exit and go back to the normal operational mode by typing:
 
 *exit*
  
-*Note: You have to replace XXX with your value, filling any space with the dollar ($) character .
-
 
 STEP 2: Registering your kit online
 
@@ -168,53 +171,79 @@ Wait for some minutes and you should see data comming to the website !
 If you have any question or are looking for more information, have a look at our forum :
 http://forum.smartcitizen.me
 
-
 ### Attaching the solar panel
+
+![Solar Panel](img/v1.0/main_board_solar_panel.jpg)
+![Solar Panel](img/main_board_solar_panel.jpg)
+
+The solar panel it should fulfil the specification of a voltage bigger than 8v and less than 15v, 12v is the recommended voltage, and a minimum of 500mA.
+
+In order to attach the solar panel you have to solder the cables of the solar panel to the pads marked in the next image for version 1.0 of the SCK. For version 1.1 you have to connect the cables to the connector marked in the next image. 
+
+In both versions, yo have to attach the plus of solar panel to the plus pad of the SCK, and the minus of the solar panel to the minus pad of the SCK.
+
 ### Sensor calibration
+
 ### Connecting from an iPhone
 
 
 The Sck Command Line
 =====
+
+The Smart Citizen Kit can be managed over a basic serial protocol. You just need the Arduino IDE Serial Monitor or any other Serial Utility like Screen in order to use it.
+
+**How to use it**
+
+- Connect to your kit using any serial utility, any baud-rate should work but 115200 is recommendable.
+- Send the starting commands.
+- Notice all the commands except the starting command($$$) require a carriage return at the end: CR or \r. If you are using the Arduino IDE is enough if you change to “Carriage return” option (drop-down menu at the bottom-right of the monitor window).
+- Call any command you want, change XXX with the corresponding value, filling any space with the dollar ($) character.
+
 ### Basic SCK commands
 
-- $$$ Wake up the module and activate the Wi-Fi
-- set wlan ssid XXX\r Add a new SSID to memory
-- set wlan phrase XXX\r Add a new phrase to memory
-- set wlan key XXX\r Add a new key to memmory
-- set wlan auth XXX\r Add an authentication method into memory
-- set wlan ext_antenna XXX\r Add an antenna type into memmory
-- get mac\r Get the MAC address of the kit
-- exit\r Go back to normal operational mode
+- **$$$** (Wake up the module and activate the Wi-Fi)
+- **set wlan ssid XXX** (Add a new SSID to memory9)
+- **set wlan phrase XXX** (Add a new phrase to memory)
+- **set wlan key XXX** (Add a new key to memmory)
+- **set wlan auth XXX** (Add an authentication method into memory)
+- **set wlan ext_antenna XXX** (Add an antenna type into memmory)
+- **get mac** (Get the MAC address of the kit)
+- **exit** (Go back to normal operational mode)
 
 ### Special SCK commands
 
-- get time update\r Retrieve the sensor update interval
-- set time update XXX\r Update the sensor update interval
-- get number updates\r Retrieve the max number of bulk updates allowed
-- set number updates XXX\r Update the max number of bulk updates allowed
-- get apikey\r Retrieve the kit APIKEY
-- set apikey XXX\r Update the kit APIKEY
-- get wlan ssid\r Retrieve the SSID saved on the kit
-- get wlan phrase\r Retrieve the phrase and KEY saved on the kit
-- get wlan auth\r Retrieve the authentication methods saved on the kit
-- get wlan ext_antenna\r Retrieve the antenna types saved on the kit
-- clear nets\r Remove all saved Wi-Fi configuration information
-- exit\r Goes back to normal operational mode
-- data\r Retrieves sensor readings stored in memory
+- **get time update** (Retrieve the sensor update interval)
+- **set time update XXX** (Update the sensor update interval)
+- **get number updates** (Retrieve the max number of bulk updates allowed)
+- **set number updates XXX** (Update the max number of bulk updates allowed)
+- **get apikey** (Retrieve the kit APIKEY)
+- **set apikey XXX** (Update the kit APIKEY)
+- **get wlan ssid** (Retrieve the SSID saved on the kit)
+- **get wlan phrase** (Retrieve the phrase and KEY saved on the kit)
+- **get wlan auth** (Retrieve the authentication methods saved on the kit)
+- **get wlan ext_antenna** (Retrieve the antenna types saved on the kit)
+- **clear nets** (Remove all saved Wi-Fi configuration information)
+- **exit** (Goes back to normal operational mode)
+- **data** (Retrieves sensor readings stored in memory)
 
 ### Basic WiFly commands
+
+To deepening into wifly commands look at the link below:
+
+<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/50002230A.pdf" target="_blank">WiFly Command Reference</a>
 
 Hardware
 =====
 ### Inside the SCK
 
+![Main Board](img/v1.0/main_board.jpg)
 ![Main Board](img/main_board.jpg)
 
 #### Main Board
 
 The main board contains the basic functionality like sensor I/O to read de sensor values, communicate with the platform through the wifi module, manage the power and battery charging.
 
+![Main Board CPU](img/v1.0/main_board_cpu.jpg)
 ![Main Board CPU](img/main_board_cpu.jpg)
 
 **CPU** 
@@ -231,6 +260,7 @@ This CPU has native USB and an UART TTL port allowing us to connect directly wit
 
 The 1.0 version uses a Mini USB connector and 1.1 version uses a Micro USB.
 
+![wifly module](img/v1.0/main_board_wifly.jpg)
 ![wifly module](img/main_board_wifly.jpg)
 
 **WIFI MODULE**
@@ -258,7 +288,8 @@ Main features:
 
 <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/rn-131-ds-v3.2r.pdf" target="_blank">WIFLY module - RN-131 datasheet</a>
 
-
+![NCP1400](img/v1.0/main_board_NCP1400.jpg)
+![MAX604](img/v1.0/main_board_MAX604.jpg)
 ![MCP1725](img/main_board_MCP1725.jpg)
 
 **BATTERY POWERING**
@@ -277,7 +308,7 @@ In 1.1 version, to simplify, the voltage of entire SCK was unified to 3.3V. The 
 <a href="http://www.solarbotics.net/library/datasheets/MAX604.pdf" target="_blank">MAX604 datasheet</a><br>
 <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22026b.pdf" target="_blank">MCP1725 datasheet</a>
 
-
+![MCP73831](img/v1.0/main_board_MCP73831.jpg)
 ![MCP73831](img/main_board_MCP73831.jpg)
 
 **BATTERY CHARGING**
@@ -288,6 +319,7 @@ For the solar panel way, in 1.0 version the solar panel have to be 12v and 500mA
 
 <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf" target="_blank">MCP73831 datasheet</a>
 
+![LM2674](img/v1.0/main_board_LM2674.jpg)
 ![LM2674](img/main_board_LM2674.jpg)
 
 **SOLAR PANEL CHARGING**
@@ -298,6 +330,7 @@ To carry out this task we are using the LM2674 IC, a very efficient IC, with a r
 
 <a href="http://www.ti.com/lit/ds/symlink/lm2674.pdf" target="_blank">LM2674 datasheet</a>
 
+![DS1307](img/v1.0/main_board_DS1307.jpg)
 ![DS1339Y-3+](img/main_board_DS1339Y-3+.jpg)
 
 **RTC (REAL TIME CLOCK)**
@@ -307,6 +340,7 @@ The SCK has a real time clock for when the kit is offline. For this task we chos
 <a href="http://datasheets.maximintegrated.com/en/ds/DS1307.pdf" target="_blank">DS1307 datasheet</a><br>
 <a href="http://datasheets.maximintegrated.com/en/ds/DS1339-DS1339U.pdf" target="_blank">DS1339Y-3+ datasheet</a>
 
+![DM3CS](img/v1.0/main_board_DM3CS.jpg)
 ![DM3CS](img/main_board_DM3CS.jpg)
 
 **SD CARD READER**
@@ -317,7 +351,7 @@ To hold the SD card we are using the DM3CS holder. The SD card is powered at 3.3
 
 <a href="http://www.mouser.com/ds/2/185/e60900232-38395.pdf" target="_blank">DM3CS datasheet</a>
 
-
+![24LC256](img/v1.0/main_board_24LC256.jpg)
 ![24LC256](img/main_board_24LC256.jpg)
 
 **EEPROM MEMORY**
@@ -337,6 +371,7 @@ The main board has some basic sensors:
 - Measurement of the solar panel level
 - Measurement of the wireless networks detected
 
+![Sensor Board](img/v1.0/sensor_board.jpg)
 ![Sensor Board](img/sensor_board.jpg)
 
 #### SENSOR BOARD
@@ -405,14 +440,55 @@ The ADXL345 has I2C protocol to interface with.
 Due to the ease of the I2C protocol. We’ve included and I2C bus to provide to the community the opportunity of expanding the SCK.
 
 
+
 ### Enclosures
+
+![Enclosure](img/case.jpg)
+
+We have designed a laser cut cover for an acrylic material and a 3D-Printed enclosure to better safeguard the hardware, particularly for outdoor applications.
+
+You can download the files through this links.
+
+<a href="http://www.thingiverse.com/thing:262891" target="_blank">Smart Citizen Enclosure 1.0</a><br>
+<a href="http://www.thingiverse.com/thing:236976" target="_blank">Smart Citizen Enclosure 1.1</a>
+
+
 ### Acrylic cases 
+
+![Acrylic](img/acrylic.jpg)
+
+This case has been designed to protect the electronics on the circuit boards and allows for mount the SCK's hardware on walls and other surfaces without much trouble. Particularly for indoor applications.
+
+<a href="https://github.com/acrobotic/Ai_Enclosure_SCK/tree/master/laser_cut" target="_blank">Acrylic cases</a>
 
 
 Software
 ====
 ### Inside the SC Platform
 
+Once you've added your SCK to the plattform and it's capturing and sending data correctly, you can interact with the plattform in several ways. Visualizing the data, downloading the data and interacting with the data through the API.
+
+**Data Visualization**
+
+To visualize the data of your device, you have to sign in into the platfform. Once you've signed, you'll be in your dashboard, click on SENSORS tab, click on one of your sensors and click in the button SHOW IN MAP.
+
+Now, at bottom of your browser will appear a panel for visulize your data. You can visualize one by one or multiple together. For this, you can switch between the different sensors data clicking on the icons under the label FILTER. Also, you can change between different periods of time, selecting HOUR, DAY, WEEK... in the SHOW LAST drop-down selector.
+
+**Download Data**
+
+If you are interested in use the data captured by your sensors, you can download all the data for later use. To do this, go to your sensor profile, at the bottom there is a selector under the label DOWNLOAD DATA. You can choose between 3 different formats, CSV, XML and JSON.
+
+**API**
+
+The <a href="http://api.smartcitizen.me/" target="_blank">Smart Citizen API</a> allows you to request back information from your devices and do incredible things with it.
+
+It is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> API and it returns the information in <a href="https://en.wikipedia.org/wiki/Json" target="_blank">JSON</a> format. This means you can easily access the information from any language like Javascript, PHP, Processing.org, Python, and start doing things with it quickly.
+
+To access the API you will always need and api_key you can obtain <a href="http://smartcitizen.me/users/dashboard" target="_blank">here</a>.
+
+The API is currently under BETA more functions will be comming soon. Please, report any problem or suggestion on the <a href="http://forum.smartcitizen.me/" target="_blank">forum</a>.
+
+<a href="http://api.smartcitizen.me/" target="_blank">api.smartcitizen.me</a>
 
 
 Faq
