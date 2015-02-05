@@ -138,7 +138,7 @@ char* antennaExt[networks]  = {
 #endif
  ```
  
-The easiest way would be to write "#define redes X" (where X is the number of WI-FI networks you are going to use),  add the name of your network in "RedX" and the corresponding password in "PassX". You could also choose the encryption mode that fits with your network's configuration (OPEN, WEP, WPA1, WPA2, WEP64) or the type of antenna you are using (*INT_ANT* for internal antenna (default) or *EXT_ANT* for external antenna).
+The easiest way would be to write "#define networks X" (where X is the number of WI-FI networks you are going to use),  add the name of your network in "RedX" and the corresponding password in "PassX". You could also choose the encryption mode that fits with your network's configuration (OPEN, WEP, WPA1, WPA2, WEP64) or the type of antenna you are using (*INT_ANT* for internal antenna (default) or *EXT_ANT* for external antenna).
  
 If you register only one wifi credential, you should obtain something like:
  
@@ -501,20 +501,60 @@ The API is currently under BETA more functions will be comming soon. Please, rep
 Faq
 ====
 ### How to store data in your own database?
+
+The Smart Citizen Kit is publishing by default the data as a PUT Http request, the sensor data is encoded as JSON.
+
+Here you can see how a kit's request will look like.
+
+``
+curl -X PUT -H 'Host: data.smartcitizen.me' -H 'User-Agent: SmartCitizen' -H 'X-SmartCitizenMacADDR: 00:00:00:00:00:00' -H 'X-SmartCitizenVersion: 1.1-0.8.5-A' -H 'X-SmartCitizenData: [{"temp":"29090.6", "hum":"6815.74", "light":"30000", "bat":"786", "panel":"0", "co":"112500", "no2":"200000", "noise":"2", "nets":"10", "timestamp":"2013-10-28 1:34:26"}]' data.smartcitizen.me/add
+``
+
+Data for the temperature, humidity and noise is sent it in raw and then calibrated in our platform.
+
+Here are the different paths you can take in order to built your own backend.
+
+- Create a fork of the the <a href="https://github.com/fablabbcn/Smart-Citizen-Kit/tree/master" target="_blank">Smart Citizen Kit firmware</a> in order to send the data as your custom backend expect it.
+
+- Create your own custom backend. We can share all the different modules of our backend in order for you to receive data as on the curl example above, calibrate it and store it. Contact us at support@smartcitizen.me.
+
+- Keep using our backend but request our public API <a href="http://api.smartcitizen.me/" target="_blank">api.smartcitizen.me</a> and then fill your local Mysql with it.
+
 ### How to use the SD Card?
+
+You have to use <a href="https://github.com/fablabbcn/Smart-Citizen-Kit/tree/master/sck_beta_v0_8_6_SDCARD" target="_blank">sck_beta_v0_8_6_SDCARD firmware</a> that is a version optimized for SD cards.
+
 ### Which LiPo batteries to use?
+
+The battery that we are providing is 3.7v and 2000mAh
+
 ### Which solar panels to use?
+
+The solar panel it should fulfil the specification of a voltage bigger than 8v and less than 15v, 12v is the recommended voltage, and a minimum of 500mA.
+
 ### How to setup the SCK on Ubuntu?
 ### Actual accuracy of all the sensors? 
 ### What is the spec (battery type) for the button-cell for the RTC?
+
+The RTC battery is a CR1220
+
 ### Why is 50dB the microphone lowest value?
 ### How do I calibrate the sensors?
 ### Browsers compatibility
+
+The SmartCitizen platform is built using the latest Web technologies (such as HTML5, SVG and CSS3). These languages serve as a foundation for today’s websites and web applications. 
+To enjoy Smart Citizen, we recommend you to use:
+
+Google Chrome 25+
+Firefox Mozilla 20+
 
 
 Troubleshooting
 ====
 ### Add an SSID with two words
+
+If your SSID has more than one word yo have to fill any space with the dollar ($) character.
+
 ### Serial port already in use
 ### No port available
 ### Unable to connect to the Board
@@ -529,6 +569,7 @@ Troubleshooting
 ### Collapsed USB port
 ### Broken LiPo battery wire
 
+Depending on the conditions, the battery wires can suffer until its break. We encourage you to read this <a href="https://www.sparkfun.com/tutorials/241" target="_blank">Battery Common Care Techniques</a> in order to preserve your battery.
 
 
 
