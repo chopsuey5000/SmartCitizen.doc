@@ -9,7 +9,7 @@ Thanks! The Smart Citizen Team wants to thank you for being here, for purchasing
 
 To join the Smart Citizen community we are going to show you how to add your Smart Citizen Kit(hereafter SCK) to the platform.
 
-For this, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> through your web browser(choose Firefox or CHROME). Click Register in the upper menu. Fill the form fields and click register.
+For this, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> through your web browser(choose Firefox or CHROME). Click <a href="https://smartcitizen.me/users/add" target="_blank">Register</a> in the upper menu. Fill the form fields and click register button.
 
 Once you’ve completed the registration you’ll be in your dashboard. To add your SCK kit, click on ADD SMART CITIZEN KIT.
 
@@ -439,8 +439,6 @@ The ADXL345 has I2C protocol to interface with.
 
 Due to the ease of the I2C protocol. We’ve included and I2C bus to provide to the community the opportunity of expanding the SCK.
 
-
-
 ### Enclosures
 
 ![Enclosure](img/case.jpg)
@@ -456,9 +454,7 @@ You can download the files through this links.
 
 Also, we are working in new cases that will be available soon.
 
-<a href="assets/case_assembly.pdf" target="_blank">Smart Citizen Enclosure Assembly Instructions</a>
-
-
+<a href="assets/case_assembly.pdf" target="_blank">Smart Citizen Enclosure Assembly Instructions</a>s
 
 ### Acrylic cases 
 
@@ -570,8 +566,6 @@ If your SSID has more than one word yo have to fill any space with the dollar ($
 ### Broken LiPo battery wire
 
 Depending on the conditions, the battery wires can suffer until its break. We encourage you to read this <a href="https://www.sparkfun.com/tutorials/241" target="_blank">Battery Common Care Techniques</a> in order to preserve your battery.
-
-
 
 Apps
 ====
