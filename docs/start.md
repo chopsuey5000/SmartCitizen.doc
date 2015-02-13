@@ -433,7 +433,7 @@ For the version 1.0, WM-61A was used for the microphone.
 
 For the version 1.1, POM-3044P-R was used. The amplification step was modified adding a variable gain, allowing us to measure very low and very high signals.
 
-<a href="http://industrial.panasonic.com/www-data/pdf/ABA5000/ABA5000CE22.pdf" target="_blank">WM-61A datasheet</a>
+<a href="http://industrial.panasonic.com/www-data/pdf/ABA5000/ABA5000CE22.pdf" target="_blank">WM-61A datasheet</a><br>
 <a href="http://www.farnell.com/datasheets/40113.pdf" target="_blank">POM-3044P-R datasheet</a>
 
 ![SHT21 Sensor](img/sensor_board_SHT21.jpg)
@@ -571,7 +571,12 @@ To enjoy Smart Citizen, we recommend you to use:
 
 Google Chrome 25+
 Firefox Mozilla 20+
+### What are the LEDs for, and what does the LED blinking mean?
 
+There are 5 LEDs, they are all on the base half of the SCK.  They can be understood in three groups:
+ - LED2 and LED1 - These are the two yellow (or orange) LEDs in the lower center-letf of the board.  You will only see these lit when your USB cable is connected to the SCK and you are configuring or otherwise interacting with the SCK.  LED2 is the "RX USB" and will be lit when the SCK is receiving information via the USB connection. LED1 is the "TX USB" and will be lit when the SCK is sending information via the USB connection.   
+ - LED4 and LED3 - These are the two blue LEDs in the lower center of the board.  You will see these blink often. LED3 is the "WiFi Association" and LED4 is the "WiFi Connection." The blue LEDs will blink each time the SCK posts new data wirelessly. This is normal behavior and is expected, but it only happens in bursts (then there will be no blue LED lit for about 30-40 seconds). If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and tht you're still in range of it.
+ - LED5 - This is the green LED in the upper left corner.  It will be lit when the SCK is turned on and has power.
 
 Troubleshooting
 ====
@@ -594,6 +599,10 @@ If your SSID has more than one word yo have to fill any space with the dollar ($
 ### Broken LiPo battery wire
 
 Depending on the conditions, the battery wires can suffer until its break. We encourage you to read this <a href="https://www.sparkfun.com/tutorials/241" target="_blank">Battery Common Care Techniques</a> in order to preserve your battery.
+
+### Non-Stop Blue LED Blinking
+
+If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and tht you're still in range.
 
 Apps
 ====
