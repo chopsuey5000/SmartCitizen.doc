@@ -12,24 +12,37 @@ To join the Smart Citizen family, we're going to walk you through the steps to a
 First, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> in a web browser (please choose Firefox or CHROME). Click <a href="https://smartcitizen.me/users/add" target="_blank">REGISTER</a> in the upper right menu. Complete the required fields and click REGISTER button.
 
 Required Fields:
- - USERNAME - Pick any name you want as long as someone else isn't already using the it.
- - EMAIL - Enter your email address.
- - PASSWORD - Must be at least 6 characters.
- - CITY - Enter the name of the city you're located (doesn't need to be the same as you SCK).
- - COUNTRY - Enter your Country (doesn't need to be the same as you SCK).
+
+- USERNAME - Pick any name you want as long as someone else isn't already using the it.
+
+- EMAIL - Enter your email address.
+
+- PASSWORD - Must be at least 6 characters.
+
+- CITY - Enter the name of the city you're located (doesn't need to be the same as you SCK).
+
+- COUNTRY - Enter your Country (doesn't need to be the same as you SCK).
 
 Optional Fields:
+
  - WEBSITE - If you add a website, a link is added to your CITIZEN profile page (which can be viewed by the public).
+
  - FILE - This adds a custom avatar. Click "Choose File" then find the image you want to use.  The image will appear next to you profile information.
 
 Once you’ve completed the required fields, click REGISTER.  Congratulations!! You've registered yourself and will be directed to your CITIZEN dashboard. (You can always return to your CITIZEN dashboard by clicking the LOG-IN button at the very top right of the <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> homepage)
 
 Now, let's add your SCK! From you CITIZEN dashboard, click on ADD SMART CITIZEN KIT.  Complete each field: 
+
  - TITLE - Give your SCK a name.  This title will be associated with your SCK data.
+
  - ELEVATION - If you don't know it, a simple Google search should help you.  Knowing your SCK's elevation helps to understand the data it collects.
+
  - EXPOSURE - Choose INDOOR or OUTDOOR.  Again, this helps to understand the data.
+
  - KIT VERSION - Most likely you have a 1.1 SCK. The only way you would be using a 1.0 SCK is if you got it from the original GOTEO crowdfunding campaign, or if you got it from someone else that got it from GOTEO. 
+
  - GEOLOCATION - There are two ways to complete this section: AUTO COMPLETE ON or AUTO COMPLETE OFF.  AUTO COMPLETE ON lets you type in the name of your city, then lets you choose it from a drop-down list (This will give you an approximate latitude and longitude).  AUTO COMPLETE OFF will put a blue flag on the map to the left of the form.  You then drag the flag to the SCK's location on the map.  By zooming in you can pin-point the exact latitude and longitude of your SCK (the closer you get, the better the data will be).
+
  - DESCRIPTION - This is an optional field that helps inform others of your SCK's unique set-up.  Information like "in my garage" or "im my woodshop" could help others understand why some of your data looks the way it does.
 
 Click on the SAVE SENSOR button. Congratulations!! You've added your first SCK and will be directed to your SENSOR dashboard. Your SCK now has an official device ID (it can bee seen in your browser's address bar, it is the number at the end of the url). 
@@ -574,8 +587,11 @@ Firefox Mozilla 20+
 ### What are the LEDs for, and what does the LED blinking mean?
 
 There are 5 LEDs, they are all on the base half of the SCK.  They can be understood in three groups:
+
  - LED2 and LED1 - These are the two yellow (or orange) LEDs in the lower center-letf of the board.  You will only see these lit when your USB cable is connected to the SCK and you are configuring or otherwise interacting with the SCK.  LED2 is the "RX USB" and will be lit when the SCK is receiving information via the USB connection. LED1 is the "TX USB" and will be lit when the SCK is sending information via the USB connection.   
+
  - LED4 and LED3 - These are the two blue LEDs in the lower center of the board.  You will see these blink often. LED3 is the "WiFi Association" and LED4 is the "WiFi Connection." The blue LEDs will blink each time the SCK posts new data wirelessly. This is normal behavior and is expected, but it only happens in bursts (then there will be no blue LED lit for about 30-40 seconds). If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and tht you're still in range of it.
+
  - LED5 - This is the green LED in the upper left corner.  It will be lit when the SCK is turned on and has power.
 
 Troubleshooting
@@ -602,7 +618,7 @@ Depending on the conditions, the battery wires can suffer until its break. We en
 
 ### Non-Stop Blue LED Blinking
 
-If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and tht you're still in range.
+If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and that you're still in range.
 
 Apps
 ====
