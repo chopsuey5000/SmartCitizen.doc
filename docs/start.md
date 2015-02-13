@@ -429,7 +429,12 @@ For version 1.1, was used a photodiode BH1730FVC. This sensor contains an I2C bu
 
 The noise sensor is based on an electret microphone. For the version 1.0, the audio signal is passed through an operational amplifier configured as band pass filter.
 
-For the version 1.1, the amplification step was modified adding a variable gain, allowing us to measure very low and very high signals.
+For the version 1.0, WM-61A was used for the microphone.
+
+For the version 1.1, POM-3044P-R was used. The amplification step was modified adding a variable gain, allowing us to measure very low and very high signals.
+
+<a href="http://industrial.panasonic.com/www-data/pdf/ABA5000/ABA5000CE22.pdf" target="_blank">WM-61A datasheet</a>
+<a href="http://www.farnell.com/datasheets/40113.pdf" target="_blank">POM-3044P-R datasheet</a>
 
 ![SHT21 Sensor](img/sensor_board_SHT21.jpg)
 
