@@ -5,27 +5,50 @@ Getting Started
 
 ![Smart Citizen kit 1.1](img/sck_1.1_3.jpg)
 
-Thanks! The Smart Citizen Team wants to thank you for being here, for purchasing a kit, joining the platform taking part on this adventure.
+Welcome aboard! The Smart Citizen Team wants to thank you for being here, for purchasing a kit, and for joining the community taking part in this adventure.
 
-To join the Smart Citizen community we are going to show you how to add your Smart Citizen Kit(hereafter SCK) to the platform.
+To join the Smart Citizen family, we're going to walk you through the steps to add your Smart Citizen Kit to the platform. (we'll refer to the Smart Citizen Kit as the "SCK" for now on).
 
-For this, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> through your web browser(choose Firefox or CHROME). Click <a href="https://smartcitizen.me/users/add" target="_blank">Register</a> in the upper menu. Fill the form fields and click register button.
+First, go to <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> in a web browser (please choose Firefox or CHROME). Click <a href="https://smartcitizen.me/users/add" target="_blank">REGISTER</a> in the upper right menu. Complete the required fields and click REGISTER button.
 
-Once you’ve completed the registration you’ll be in your dashboard. To add your SCK kit, click on ADD SMART CITIZEN KIT.
+Required Fields:
+ - USERNAME - Pick any name you want as long as someone else isn't already using the it.
+ - EMAIL - Enter your email address.
+ - PASSWORD - Must be at least 6 characters.
+ - CITY - Enter the name of the city you're located (doesn't need to be the same as you SCK).
+ - COUNTRY - Enter your Country (doesn't need to be the same as you SCK).
 
-Fill all the fields, under the labels SET A NEW KIT, SET UP KIT GEOLOCATION, DESCRIBE YOUR KIT, then click on SAVE SENSOR button.
+Optional Fields:
+ - WEBSITE - If you add a website, a link is added to your CITIZEN profile page (which can be viewed by the public).
+ - FILE - This adds a custom avatar. Click "Choose File" then find the image you want to use.  The image will appear next to you profile information.
 
-Now, your SCK kit has been registered. Switch on your SCK kit and click on CONFIGURE button to continue the process. 
+Once you’ve completed the required fields, click REGISTER.  Congratulations!! You've registered yourself and will be directed to your CITIZEN dashboard. (You can always return to your CITIZEN dashboard by clicking the LOG-IN button at the very top right of the <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a> homepage)
 
-If is the first time you register a kit you should install the extension of Codebender for your browser in order to configure the  SCK kit. 
+Now, let's add your SCK! From you CITIZEN dashboard, click on ADD SMART CITIZEN KIT.  Complete each field: 
+ - TITLE - Give your SCK a name.  This title will be associated with your SCK data.
+ - ELEVATION - If you don't know it, a simple Google search should help you.  Knowing your SCK's elevation helps to understand the data it collects.
+ - EXPOSURE - Choose INDOOR or OUTDOOR.  Again, this helps to understand the data.
+ - KIT VERSION - Most likely you have a 1.1 SCK. The only way you would be using a 1.0 SCK is if you got it from the original GOTEO crowdfunding campaign, or if you got it from someone else that got it from GOTEO. 
+ - GEOLOCATION - There are two ways to complete this section: AUTO COMPLETE ON or AUTO COMPLETE OFF.  AUTO COMPLETE ON lets you type in the name of your city, then lets you choose it from a drop-down list (This will give you an approximate latitude and longitude).  AUTO COMPLETE OFF will put a blue flag on the map to the left of the form.  You then drag the flag to the SCK's location on the map.  By zooming in you can pin-point the exact latitude and longitude of your SCK (the closer you get, the better the data will be).
+ - DESCRIPTION - This is an optional field that helps inform others of your SCK's unique set-up.  Information like "in my garage" or "im my woodshop" could help others understand why some of your data looks the way it does.
 
-Once you’ve installed the extension, return to smart citizen site. You’ll notice that the content has changed. Click on START PROCESS button. Wait some seconds while Codebender plugin does its tasks. 
+Click on the SAVE SENSOR button. Congratulations!! You've added your first SCK and will be directed to your SENSOR dashboard. Your SCK now has an official device ID (it can bee seen in your browser's address bar, it is the number at the end of the url). 
 
-When it has finished you’ll see a form to setup your wifi connection and data update interval parameters. Fill the fields with your ssid, encryption mode and password phrase. Then, click on SYNC button. Wait some seconds while your kit it’s been configured.
+Good job, both you and your SCK are registered. Now it's time to configure and upload the firmware that will be the brains of your SCK.
 
-When the sync has finished, don’t forget to click on the REGISTER KIT button on the bottom to add de MAC ADDRESS. Now reset your kit in order the changes take effect. 
+If this is the first time registering a SCK, you should install the <a href="https://codebender.cc/static/plugin" target="_blank">Codebender</a> plugin extention for your browser (Codebender lets you configure the SCK from the Smart Citizen website rather than hard coding everything).  Also, you'll need to download the <a href="http://arduino.cc/en/Main/Software" target="_blank">Arduino</a> drivers (if you haven't already done this for something else you've built).
 
-Back to your dashboard. Wait two minutes and reload the page, pressing ctrl+R or cmd+R depending on your operating system, to see if some data has been uploaded to the platform. To check this take a look at the value in Last Update: field.
+OK, time to unpack your SCK. Connect the USB cable to your SCK and your computer. Turn on your SCK at the switch in the upper left corner of the base board.  Now, go back to the Smart Citizen website and to your SENSOR dashboard. Click on the CONFIGURE button.
+
+If you've installed the Codebender extention and the Arduino drivers, you'll be able to click on START PROCESS button. Wait a few seconds while Codebender plugin does its job. 
+
+When it has finished you’ll see a form to setup your wifi connection and data update interval parameters. Complete the fields with your SSID (this is your wifi network's name), ENCRYPTION MODE and PASSWORD PHRASE. Then, click on SYNC button. Wait a few seconds (your SCK is learning your wifi credentials).
+
+When the sync has finished, you should see something similar to "00:06:66:21:16:E4" in the MAC ADDRESS field. Click on the REGISTER THE KIT button. Now reset your SCK in order the changes take effect.
+
+Wow! That was so easy!!
+
+Back to your SENSOR dashboard. Wait a few minutes and reload the page. See if some data has been uploaded to the Smart Citizen database. To check this take a look at the field "Last Update" (If everything worked, you should see something like "Last Update: 31 seconds ago").  After the Smart Citizen database has had a few days to gather your data, you'll be able to check it from <a href="https://smartcitizen.me/" target="_blank">smartcitizen.me</a>. 
 
 ### Manual set up: The Serial Way 
 
@@ -406,7 +429,12 @@ For version 1.1, was used a photodiode BH1730FVC. This sensor contains an I2C bu
 
 The noise sensor is based on an electret microphone. For the version 1.0, the audio signal is passed through an operational amplifier configured as band pass filter.
 
-For the version 1.1, the amplification step was modified adding a variable gain, allowing us to measure very low and very high signals.
+For the version 1.0, WM-61A was used for the microphone.
+
+For the version 1.1, POM-3044P-R was used. The amplification step was modified adding a variable gain, allowing us to measure very low and very high signals.
+
+<a href="http://industrial.panasonic.com/www-data/pdf/ABA5000/ABA5000CE22.pdf" target="_blank">WM-61A datasheet</a><br>
+<a href="http://www.farnell.com/datasheets/40113.pdf" target="_blank">POM-3044P-R datasheet</a>
 
 ![SHT21 Sensor](img/sensor_board_SHT21.jpg)
 
@@ -543,7 +571,12 @@ To enjoy Smart Citizen, we recommend you to use:
 
 Google Chrome 25+
 Firefox Mozilla 20+
+### What are the LEDs for, and what does the LED blinking mean?
 
+There are 5 LEDs, they are all on the base half of the SCK.  They can be understood in three groups:
+ - LED2 and LED1 - These are the two yellow (or orange) LEDs in the lower center-letf of the board.  You will only see these lit when your USB cable is connected to the SCK and you are configuring or otherwise interacting with the SCK.  LED2 is the "RX USB" and will be lit when the SCK is receiving information via the USB connection. LED1 is the "TX USB" and will be lit when the SCK is sending information via the USB connection.   
+ - LED4 and LED3 - These are the two blue LEDs in the lower center of the board.  You will see these blink often. LED3 is the "WiFi Association" and LED4 is the "WiFi Connection." The blue LEDs will blink each time the SCK posts new data wirelessly. This is normal behavior and is expected, but it only happens in bursts (then there will be no blue LED lit for about 30-40 seconds). If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and tht you're still in range of it.
+ - LED5 - This is the green LED in the upper left corner.  It will be lit when the SCK is turned on and has power.
 
 Troubleshooting
 ====
@@ -566,6 +599,10 @@ If your SSID has more than one word yo have to fill any space with the dollar ($
 ### Broken LiPo battery wire
 
 Depending on the conditions, the battery wires can suffer until its break. We encourage you to read this <a href="https://www.sparkfun.com/tutorials/241" target="_blank">Battery Common Care Techniques</a> in order to preserve your battery.
+
+### Non-Stop Blue LED Blinking
+
+If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and tht you're still in range.
 
 Apps
 ====
