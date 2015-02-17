@@ -414,6 +414,8 @@ The main board has some basic sensors:
 
 The sensor board contains the necessary sensors for measuring the pollution parameters. This means NO2 and CO gases, sunlight, noise pollution, temperature, humidity. Also, the sensor board has an I2C bus, this allows to expand the SCK to other kind of sensors.
 
+![MICS5525](img/v1.0/sensor_board_MICS5525.jpg)
+![MICS2710](img/v1.0/sensor_board_MICS2710.jpg)
 ![MICS4514](img/sensor_board_MICS4514.jpg)
 
 **NO2 AND CO2 SENSORS**
@@ -426,6 +428,7 @@ Metal oxide sensors are based on oxide semiconductors. Their electrical conducti
 <a href="http://www.cdiweb.com/datasheets/e2v/mics-2710.pdf" target="_blank">MICS2710 datasheet</a><br>
 <a href="http://files.manylabs.org/datasheets/MICS-4514.pdf" target="_blank">MICS4514 datasheet</a>
 
+![LDR](img/v1.0/sensor_board_LDR.jpg)
 ![H1730FVC](img/sensor_board_BH1730FVC.jpg)
 
 **LIGHT SENSOR**
@@ -436,6 +439,7 @@ For version 1.1, was used a photodiode BH1730FVC. This sensor contains an I2C bu
 
 <a href="http://www.farnell.com/datasheets/1813319.pdf" target="_blank">BH1730FVC datasheet</a>
 
+![Noise Sensor](img/v1.0/sensor_board_noise_sensor.jpg)
 ![Noise Sensor](img/sensor_board_noise_sensor.jpg)
 
 **NOISE SENSOR**
@@ -449,6 +453,7 @@ For the version 1.1, POM-3044P-R was used. The amplification step was modified a
 <a href="http://industrial.panasonic.com/www-data/pdf/ABA5000/ABA5000CE22.pdf" target="_blank">WM-61A datasheet</a><br>
 <a href="http://www.farnell.com/datasheets/40113.pdf" target="_blank">POM-3044P-R datasheet</a>
 
+![RHT22 Sensor](img/v1.0/sensor_board_RHT22.jpg)
 ![SHT21 Sensor](img/sensor_board_SHT21.jpg)
 
 **TEMPERATURE AND HUMIDITY SENSOR**
@@ -474,6 +479,7 @@ The ADXL345 has I2C protocol to interface with.
 
 <a href="http://www.analog.com/static/imported-files/data_sheets/ADXL345.pdf" target="_blank">ADXL345 datasheet</a>
 
+![I2C Bus](img/v1.0/sensor_board_i2c_bus.jpg)
 ![I2C Bus](img/sensor_board_i2c_bus.jpg)
 
 **I2C EXPANSION BUS**
