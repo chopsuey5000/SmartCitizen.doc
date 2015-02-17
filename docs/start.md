@@ -495,7 +495,7 @@ You can download the files through this links.
 
 Also, we are working in new cases that will be available soon.
 
-<a href="assets/case_assembly.pdf" target="_blank">Smart Citizen Enclosure Assembly Instructions</a>s
+<a href="assets/case_assembly.pdf" target="_blank">Smart Citizen Enclosure Assembly Instructions</a>
 
 ### Acrylic cases 
 
@@ -662,4 +662,3 @@ Depending on the conditions, the battery wires can suffer until its break. We en
 ### Non-Stop Blue LED Blinking
 
 If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and that you're still in range.
-
