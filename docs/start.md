@@ -553,7 +553,7 @@ Here are the different paths you can take in order to built your own backend.
 
 - Create a fork of the the <a href="https://github.com/fablabbcn/Smart-Citizen-Kit/tree/master" target="_blank">Smart Citizen Kit firmware</a> in order to send the data as your custom backend expect it.
 
-- Create your own custom backend. We can share all the different modules of our backend in order for you to receive data as on the curl example above, calibrate it and store it. Contact us at support@smartcitizen.me.
+- Create your own custom backend. We can share all the different modules of our backend in order for you to receive data as on the curl example above, calibrate it and store it. Contact us at <a href="mailto:support@smartcitizen.me">support@smartcitizen.me</a>.
 
 - Keep using our backend but request our public API <a href="http://api.smartcitizen.me/" target="_blank">api.smartcitizen.me</a> and then fill your local Mysql with it.
 
@@ -569,14 +569,14 @@ The battery that we are providing is 3.7v and 2000mAh
 
 The solar panel it should fulfil the specification of a voltage bigger than 8v and less than 15v, 12v is the recommended voltage, and a minimum of 500mA.
 
-### How to setup the SCK on Ubuntu?
-### Actual accuracy of all the sensors? 
 ### What is the spec (battery type) for the button-cell for the RTC?
 
 The RTC battery is a CR1220
 
 ### Why is 50dB the microphone lowest value?
-### How do I calibrate the sensors?
+
+Because the actual sensor is limited by the curve boundings from 50dB to 103dB
+
 ### Browsers compatibility
 
 The SmartCitizen platform is built using the latest Web technologies (such as HTML5, SVG and CSS3). These languages serve as a foundation for today’s websites and web applications. 
@@ -596,22 +596,65 @@ There are 5 LEDs, they are all on the base half of the SCK.  They can be underst
 
 Troubleshooting
 ====
+
 ### Add an SSID with two words
 
 If your SSID has more than one word yo have to fill any space with the dollar ($) character.
 
 ### Serial port already in use
+
+This happens when one application is already using the serial port. For example, if you have the Arduino IDE serial monitor opened and you're trying to configure your SCK through the web browser. You have yo close the serial monitor first.
+
 ### No port available
+
+This message will appear when you have uploaded the wrong firmware version to your SCK.
+
 ### Unable to connect to the Board
+
+This happens when one application is already using the serial port. For example, if you have the Arduino IDE serial monitor opened and you're trying to configure your SCK through the web browser. You have yo close the serial monitor first.
+
 ### Unable to connect to the Internet
+
+If you're getting the message "Error in connection" when you run the SCK firmware this may be due:
+
+- Your router works with a protocol different than 802.11AG
+- You have set wrong SSID name and/or password 
+- Your network has an encryption different than OPEN, WEP, WPA1, WPA2 OR WEP64
+- Your firewall is blocking the mac address of your SCK
+- Your internet connection is not stable
+
 ### No data received yet
-### Error in connection
+
+This message appears the first time you register your kit, is due to cache issues. This issue normally is fixed after a few hours, in any case we are working to improve this issue.
+
 ### Port is not appearing on the drop down
-### Performed install but still no data
+
+This may be due:
+
+- The SCK is turned off.
+- The USB cable you're using has wired only power cable and not the data cables.
+- The bootloader is corrupted.
+
 ### Firmware update problem
-### Sensors erratic behaviour
-### No MAC address registered
+
+If you're having problems updating the firmware you can try one of these two options:
+
+- Update the latest firmware through the web browser configurator.
+- Update the latest firmware throught Arduino IDE.
+
+If you're still having problems it's may be due to a hardware or software issue, contact us at <a href="mailto:support@smartcitizen.me">support@smartcitizen.me</a>.
+
+#### No MAC address registered
+
+If you're getting this message, the may be due:
+
+- Configuration process is not finished correctly.
+- The WIFI module of your SCK is corrupted, so MAC address is not accesible. To repair your wifi module refer to this <a href="" target="_blank">tutorial</a>.
+
 ### Collapsed USB port
+
+First batches of SCK version 1.1 came with this issue. We have a tutorial you can follow to repair it or contact us at <a href="mailto:support@smartcitizen.me" target="_blank">support@smartcitizen.me</a>.
+
 ### Broken LiPo battery wire
 
 Depending on the conditions, the battery wires can suffer until its break. We encourage you to read this <a href="https://www.sparkfun.com/tutorials/241" target="_blank">Battery Common Care Techniques</a> in order to preserve your battery.
@@ -620,7 +663,3 @@ Depending on the conditions, the battery wires can suffer until its break. We en
 
 If your blue LEDs are blinking back and forth non-stop, this means your SCK has lost its WiFi connection. Check to make sure your router is still on, and that you're still in range.
 
-Apps
-====
-### iOS
-### Android
